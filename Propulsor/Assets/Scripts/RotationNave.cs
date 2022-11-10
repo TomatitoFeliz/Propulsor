@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class RotationNave : MonoBehaviour
 {
-    Quaternion rotation;
+    public Transform Personas;
+    public float velocidad = 4.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        rotation.z = Input.GetAxis("Horizontal") * Time.deltaTime;
+        Personas.Rotate(Vector3.forward * velocidad * Time.deltaTime);
     }
 }
